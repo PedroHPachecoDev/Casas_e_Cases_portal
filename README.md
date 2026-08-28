@@ -15,6 +15,6 @@ Criação de um site/ portal para a empresa Casas&amp;Cases. Tem como objetivo l
       Permitir exibição dos imóveis agenciados pela empresa.
       Seções interativas com carroséis de fotos e vídeos, que transportam o usuário final para páginas específicas.
 
-    Requisitos Não Funcionais:
+  Requisitos Não Funcionais:
       Seguir Identidade Visual da marca.
       O sistema deve ter boa responsividade.
