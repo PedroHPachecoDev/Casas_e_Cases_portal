@@ -1,6 +1,6 @@
 export const images = {
 
-  centroHistorico1: '/img/CENTRO_HISTORICO/IMG_8070.JPG',
+  centroHistorico1: '/img/CENTRO_HISTORICO/IMG_8072.JPG',
   mirante1: '/img/MIRANTE/IMG_8019.JPG',
   fogoRancho1: '/img/FOGO_NO_RANCHO/IMG_9666.JPEG',
   unika1: '/img/UNIKA/IMG_6980.jpg',
@@ -29,9 +29,9 @@ export const images = {
   paisagemP3: '/img/PAISAGEM/Captura de Tela (79).png',
   paisagemP4: '/img/PAISAGEM/Captura de Tela (80).png',
 
-  casaAraucaria1: '',
-  casaDoVale1: '',
-  casaHorizonte1: '',
+  cabanaNashville: '/img/cabanaNashville.JPG',
+  cabanaTennessee: '/img/cabanaTennessee.JPG',
+  cabanaMemphis: '/img/cabanaMemphis.jpg',
   casaPinhao1: '',
   casaCedro1: '',
   casaIpes1: '',
@@ -59,28 +59,28 @@ export const heroSlides = [
 
 export const authorialProperties = [
   {
-    image: images.casaAraucaria1,
-    tag: 'Casa autoral',
-    title: 'Casa Araucária',
-    text: 'Uma casa de campo desenhada para acolher encontros e contemplar a paisagem.',
-    meta: 'Rancho Queimado · SC',
-    value: 'Em breve',
+    image: images.cabanaNashville,
+    tag: 'Cabana na serra',
+    title: 'Cabana Nashville',
+    text: 'Uma cabana no campo desenhada para aquecer os corações e contemplar a paisagem.',
+    meta: 'Serra Catarinense',
+    value: 'Disponível',
   },
   {
-    image: images.casaDoVale1,
-    tag: 'Refúgio',
-    title: 'Casa do Vale',
+    image: images.cabanaTennessee,
+    tag: 'Cabana na serra',
+    title: 'Cabana Tenessee',
     text: 'Arquitetura, silêncio e natureza em uma implantação que respeita o terreno.',
     meta: 'Serra Catarinense',
-    value: 'Consulte',
+    value: 'Disponível',
   },
   {
-    image: images.casaHorizonte1,
-    tag: 'Projeto C&C',
-    title: 'Casa Horizonte',
-    text: 'Uma experiência de moradia pensada nos mínimos detalhes para viver a serra.',
-    meta: 'Rancho Queimado · SC',
-    value: 'Em breve',
+    image: images.cabanaMemphis,
+    tag: 'Cabana na serra',
+    title: 'Cabana Memphis',
+    text: 'Uma experiência pensada nos mínimos detalhes para viver a serra de um jeito aconchegante.',
+    meta: 'Serra Catarinense',
+    value: 'Disponível',
   },
 ];
 
