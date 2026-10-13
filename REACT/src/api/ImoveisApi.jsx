@@ -19,4 +19,16 @@ function ListarImoveis(){
 
     const url = `https://casascas-rest.vistahost.com.br/imoveis/listar?key=${key}&showtotal=${showtotal}&pesquisa=${pesquisaString}`
     })
+
+    fetch(url)
+    .then((response) => {
+        if(!response.ok){
+            throw new Error('Erro ao carregar os dados da API');
+        }
+        return response.json();
+    })
+    .then((data) => {
+        setImoveis(data.imoveis || data);
+        setLoading(false);
+    })
 }
