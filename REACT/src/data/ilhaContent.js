@@ -1,0 +1,260 @@
+export const ilhaImages = {
+  centroHistorico1: '/img/CENTRO_HISTORICO/IMG_8072.JPG',
+  mirante1: '/img/MIRANTE/IMG_8019.JPG',
+  fogoRancho1: '/img/FOGO_NO_RANCHO/IMG_9666.JPEG',
+  unika1: '/img/UNIKA/IMG_6980.jpg',
+  paisagem1: '/img/PAISAGEM/Captura de Tela (84).png',
+  
+  miranteP1: '/img/MIRANTE/IMG_8013.MP4',
+  fogoRanchoP1: '/img/FOGO_NO_RANCHO/IMG_9641.JPEG',
+  fogoRanchoP2: '/img/FOGO_NO_RANCHO/IMG_9620.JPEG',
+  fogoRanchoP3: '/img/FOGO_NO_RANCHO/IMG_9619.MP4',
+  fogoRanchoP5: '/img/FOGO_NO_RANCHO/IMG_9640.MOV',
+  unikaP1: '/img/UNIKA/IMG_6964.MOV',
+  unikaP2: '/img/UNIKA/IMG_6970.MOV',
+  unikaP3: '/img/UNIKA/IMG_6966.MOV',
+  unikaP4: '/img/UNIKA/IMG_6973.MOV',
+  paisagemP1: '/img/PAISAGEM/Captura de Tela (83).png',
+  paisagemP2: '/img/PAISAGEM/Captura de Tela (78).png',
+  paisagemP3: '/img/PAISAGEM/Captura de Tela (79).png',
+  paisagemP4: '/img/PAISAGEM/Captura de Tela (80).png',
+  cabanaNashville: '/img/cabanaNashville.JPG',
+  cabanaTennessee: '/img/cabanaTennessee.JPG',
+  cabanaMemphis: '/img/cabanaMemphis.jpg',
+  casaPinhao1: '',
+  casaCedro1: '',
+  casaIpes1: '',
+};
+
+export const ilhaHeroSlides = [
+  {
+    image: ilhaImages.centroHistorico1,
+    label: 'A ilha como cenário',
+    text: 'Uma experiência única em meio à cidade mais inovadora do estado.',
+  },
+  {
+    image: ilhaImages.mirante1,
+    label: 'Arquitetura com propósito',
+    text: 'Propriedades que combinam patrimônio, natureza e uma forma melhor de viver.',
+  },
+  {
+    image: ilhaImages.fogoRancho1,
+    label: 'Eventos e experiências',
+    text: 'Oportunidades únicas de viver Florianópolis com tudo o que ela tem a oferecer.',
+  },
+];
+
+export const ilhaAuthorialProperties = [
+  {
+    image: ilhaImages.cabanaNashville,
+    tag: 'Apartamento na ilha',
+    title: 'Conforto e localização',
+    text: 'Um apartamento no coração da ilha, com vista deslumbrante e acesso fácil a todos os serviços.',
+    meta: 'Florianópolis, SC',
+    value: 'Disponível',
+  },
+  {
+    image: ilhaImages.cabanaTennessee,
+    tag: 'Apartamento na ilha',
+    title: 'Imóvel super valorizado',
+    text: 'Apartamento em uma localização privilegiada na ilha.',
+    meta: 'Florianópolis, SC',
+    value: 'Disponível',
+  },
+  {
+    image: ilhaImages.cabanaMemphis,
+    tag: 'Apartamento na ilha',
+    title: 'Um lar para chamar de seu',
+    text: 'Uma experiência pensada nos mínimos detalhes para viver a ilha de um jeito aconchegante.',
+    meta: 'Florianópolis, SC',
+    value: 'Disponível',
+  },
+];
+
+export const ilhaProperties = [
+  {
+    image: ilhaImages.casaPinhao1,
+    tag: 'Residência',
+    title: 'Casa Pinhão',
+    text: 'Linhas limpas, materiais naturais e uma vista que muda a cada estação.',
+    meta: '3 quartos · 280 m²',
+    value: 'R$ 2,4 mi',
+  },
+  {
+    image: ilhaImages.casaCedro1,
+    tag: 'Sítio',
+    title: 'Morada do Cedro',
+    text: 'Um refúgio completo entre mata nativa, água e caminhos para explorar.',
+    meta: '5 ha · Rancho Queimado',
+    value: 'R$ 1,8 mi',
+  },
+  {
+    image: ilhaImages.casaIpes1,
+    tag: 'Casa de campo',
+    title: 'Casa dos Ipês',
+    text: 'O conforto de uma casa contemporânea com o ritmo tranquilo da serra.',
+    meta: '4 quartos · 320 m²',
+    value: 'R$ 2,9 mi',
+  },
+];
+
+export const ilhaLocalLife = [
+  {
+    slug: 'cervejaria-unika',
+    image: ilhaImages.unika1,
+    gallery: [
+      { src: ilhaImages.unikaP1, caption: 'Ambiente acolhedor e autêntico no centro da cidade.' },
+      { src: ilhaImages.unikaP2, caption: 'A rua e o clima de bairro que envolvem a experiência local.' },
+      { src: ilhaImages.unikaP3, caption: 'Uma vista que completa o passeio em Rancho Queimado.' },
+      { src: ilhaImages.unikaP4, caption: 'Uma experiência única em meio à cidade.' },
+    ],
+    highlights: ['Produção artesanal local', 'Ambiente descontraído', 'Ritmo de cidade pequena'],
+    tag: 'Experiências',
+    title: 'Cervejaria Unika',
+    text: 'Cervejaria localizada no centro de Rancho Queimado-SC. É um ponto de encontro para quem valoriza boa conversa, apresentação cuidadosa e o prazer de estar em um lugar com personalidade.',
+  },
+  {
+    slug: 'paisagens-naturais',
+    image: ilhaImages.paisagem1,
+    gallery: [
+      { src: ilhaImages.paisagemP1, caption: 'A paisagem que marca a identidade da região.' },
+      { src: ilhaImages.paisagemP2, caption: 'Pontos de observação que revelam a serra em cada ângulo.' },
+      { src: ilhaImages.paisagemP3, caption: 'A mistura entre natureza, arquitetura e vida cotidiana.' },
+      { src: ilhaImages.paisagemP4, caption: 'A mistura entre natureza, arquitetura e vida cotidiana.' },
+    ],
+    highlights: ['Paisagens de altitude', 'Ritmo lento e contemplativo', 'Lugares para respirar fundo'],
+    tag: 'Paisagem',
+    title: 'Paisagens naturais',
+    text: 'A vida local se revela nas belezas naturais, nos pequenos eventos e nas pessoas que tornam cada esquina familiar. Cada vista conta uma parte da rotina e da identidade da serra catarinense.',
+  },
+  {
+    slug: 'fogo-no-rancho',
+    image: ilhaImages.fogoRancho1,
+    gallery: [
+      { src: ilhaImages.fogoRanchoP1, caption: 'Um evento anual com música Country e comidas típicas das regiões do Tenessee.' },
+      { src: ilhaImages.fogoRanchoP2, caption: 'A cidade oferece um cenário acolhedor antes e depois do evento.' },
+      { src: ilhaImages.fogoRanchoP3, caption: 'A natureza ampliando a experiência de convivência.' },
+      { src: ilhaImages.fogoRanchoP5, caption: 'Uma nova perspectiva da experiência no evento.' },
+    ],
+    highlights: ['Música e gastronomia', 'Convivência comunitária', 'Paisagem como cenário principal'],
+    tag: 'Eventos',
+    title: 'Fogo no Rancho',
+    text: 'Eventos e confraternizações: música, comida, paisagem e uma convivência que acontece sem pressa. Esses encontros são parte da alma do lugar e reforçam a sensação de pertencimento.',
+  },
+  {
+    slug: 'um-lugar-para-viver-bem',
+    image: ilhaImages.centroHistorico1,
+    gallery: [
+      { src: ilhaImages.centroHistoricoP1, caption: 'A arquitetura e o ritmo urbano do centro histórico.' },
+      { src: ilhaImages.centroHistoricoP2, caption: 'Comércios e encontros cotidianos que tornam a área viva.' },
+      { src: ilhaImages.centroHistoricoP3, caption: 'O contraste entre centro urbano e vista panorâmica da serra.' },
+      { src: ilhaImages.centroHistoricoP4, caption: 'A vida cotidiana que acontece entre ruas e praças.' },
+    ],
+    highlights: ['História preservada', 'Ruas com identidade', 'Viver bem no cotidiano'],
+    tag: 'História',
+    title: 'Centro Histórico',
+    text: 'O coração da cidade, onde o passado se encontra com o presente em uma atmosfera única. É ali que a rotina ganha identidade, os encontros ganham calor e a memória do lugar continua viva.',
+  },
+  {
+    slug: 'mirante-boa-vista',
+    image: ilhaImages.mirante1,
+    gallery: [
+      { src: ilhaImages.mirante1, caption: 'A vista panorâmica que define o local.' },
+      { src: ilhaImages.miranteP1, caption: 'A extensão da paisagem em direção à serra e ao horizonte.' },
+      { src: ilhaImages.fogoRancho1, caption: 'Pontos de encontro e celebração da região.' },
+    ],
+    highlights: ['Panorama único', 'Pausa contemplativa', 'Experiência turística genuína'],
+    tag: 'Turismo',
+    title: 'Mirante do alto da Boa Vista',
+    text: 'Uma vista deslumbrante sobre a paisagem da região. O mirante é um convite para pausar, observar e perceber a dimensão do lugar e o valor de viver em contato com a natureza.',
+  },
+];
+
+export const ilhaPageCopy = {
+  documentTitle: 'Casas & Cases Ilha',
+  header: {
+    links: [
+      ['Propriedades', '#propriedades'],
+      ['Lotes', '#lotes'],
+      ['Autorais', '#autorais'],
+      ['Institucional', '#institucional'],
+    ],
+    contactEmail: 'contato@casasecases.com.br',
+    contactLabel: 'Contato',
+    actionLabel: 'Conversar',
+  },
+  heroDescription: 'Uma curadoria de residências, propriedades e lotes para quem procura mais do que um endereço.',
+  authorial: {
+    kicker: 'Propriedades autorais',
+    title: 'Projetadas para carregar a nossa visão.',
+    description: 'Projetos em que a Casas & Cases participa da concepção, desenvolvimento e valorização do ativo, da ideia à experiência final.',
+  },
+  properties: {
+    kicker: 'Propriedades',
+    title: 'Imóveis que merecem ser apresentados de outra maneira.',
+    description: 'Em cada seleção, mostramos a residência, a propriedade como um todo e o contexto em que ela está inserida.',
+  },
+  feature: {
+    image: ilhaImages.paisagemP4,
+    imageAlt: 'Paisagem da Ilha de Florianópolis',
+    kicker: 'O jeito C&C de olhar',
+    title: 'Uma propriedade começa muito antes da chave.',
+    description: 'Nosso trabalho é aproximar pessoas de lugares que tenham verdade. Olhamos para arquitetura, paisagem, contexto e para o que cada escolha pode construir ao longo do tempo.',
+    linkLabel: 'Conheça a Casas & Cases',
+  },
+  localLife: {
+    kicker: 'Vida local',
+    title: 'A cidade em seus pequenos detalhes.',
+    description: 'A identidade de um lugar é feita por pessoas, serviços, comercios e experiências que acontecem no dia a dia, longe do foco do mercado e perto da vida real.',
+  },
+  lots: {
+    kicker: 'Lotes',
+    title: 'Para quem prefere começar pelo potencial.',
+    description: 'Terrenos selecionados não apenas por metragem, mas por implantação, paisagem, acesso e possibilidades reais de desenvolvimento.',
+    heroImage: ilhaImages.paisagemP3,
+    heroImageAlt: 'Paisagem de um terreno na ilha',
+    heroTag: 'Florianópolis, SC',
+    heroTitle: 'Terrenos com horizonte aberto',
+    heroDescription: 'Escolhas para quem quer construir com calma, intenção e uma relação verdadeira com a paisagem.',
+    heroLinkLabel: 'Ver oportunidades',
+    sideItems: [
+      {
+        tag: 'Condomínios',
+        title: 'Lotes selecionados',
+        description: 'Opções em condomínios de Rancho Queimado para diferentes perfis de projeto e investimento.',
+        linkLabel: 'Ver lotes',
+      },
+      {
+        tag: 'Consultoria C&C',
+        title: 'Você vê o terreno. Nós vemos o que ele pode se tornar.',
+        description: 'Análise de implantação, potencial construtivo e estratégia antes da decisão de compra.',
+      },
+    ],
+  },
+  detail: {
+    eyebrow: 'Vida local',
+    notFound: 'Imagem não encontrada.',
+    backLabel: 'Voltar',
+  },
+  cta: {
+    kicker: 'Casas & Cases Ilha',
+    title: 'Não vendemos apenas imóveis. Ajudamos você a tomar decisões que façam sentido.',
+    description: 'Comprar, vender, investir ou desenvolver uma propriedade começa por entender o que você quer construir para a sua vida e para o seu patrimônio.',
+    buttonLabel: 'Falar com a C&C',
+    buttonHref: 'https://wa.me/5548999358523',
+  },
+  footer: {
+    description: 'Curadoria imobiliária na Serra Catarinense.',
+    instagramHref: 'https://www.instagram.com/casasecasesserra/',
+    navigationTitle: 'Navegação',
+    links: [
+      ['Propriedades', '#propriedades'],
+      ['Lotes', '#lotes'],
+      ['Autorais', '#autorais'],
+      ['Institucional', '#institucional'],
+    ],
+    contactTitle: 'Contato',
+    email: 'contato@casasecases.com.br',
+    phone: '+55 (48) 99935-8523',
+  },
+};

@@ -1,17 +1,21 @@
 import { Link, useParams } from 'react-router-dom';
 import { localLife } from '../data/content';
 
-export function LocalLifeDetail() {
+export function LocalLifeDetail({
+  items = localLife,
+  homePath = '/',
+  content = { eyebrow: 'Vida local', notFound: 'Imagem não encontrada.', backLabel: 'Voltar' },
+}) {
   const { slug } = useParams();
-  const item = localLife.find((entry) => entry.slug === slug);
+  const item = items.find((entry) => entry.slug === slug);
 
   if (!item) {
     return (
       <section className="localLifeDetail">
         <div className="localLifeDetailInner">
-          <p className="eyebrow">Vida local</p>
-          <h1>Imagem não encontrada.</h1>
-          <Link to="/" className="buttonLink">
+          <p className="eyebrow">{content.eyebrow}</p>
+          <h1>{content.notFound}</h1>
+          <Link to={homePath} className="buttonLink">
             Voltar para o início
           </Link>
         </div>
@@ -24,8 +28,8 @@ export function LocalLifeDetail() {
   return (
     <section className="localLifeDetail">
       <div className="localLifeDetailHeader">
-        <Link to="/" className="backLink">
-          ← Voltar
+        <Link to={homePath} className="backLink">
+          ← {content.backLabel}
         </Link>
       </div>
 

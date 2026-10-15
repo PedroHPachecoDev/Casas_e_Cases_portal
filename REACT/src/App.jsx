@@ -1,5 +1,6 @@
-﻿import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+﻿import { useEffect, useState } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { BluePage } from './BluePage';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { PropertySection } from './components/PropertySection';
@@ -10,19 +11,16 @@ import { LotsSection } from './components/LotsSection';
 import { CtaSection } from './components/CtaSection';
 import { Footer } from './components/Footer';
 import { authorialProperties, properties } from './data/content';
+import { ilhaPageCopy } from './data/ilhaContent';
+import { LandingPage } from './LandingPage';
 
-function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
+function OriginalSite({ detail = false }) {
   return (
     <>
-      <Header open={menuOpen} setOpen={setMenuOpen} />
-
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <main>
+      {detail ? (
+        <LocalLifeDetail />
+      ) : (
+        <main>
               <Hero />
 
               <PropertySection
@@ -45,16 +43,47 @@ function App() {
 
               <LocalLifeSection />
               <LotsSection />
-            </main>
-          }
-        />
-
-        <Route path="/vida-local/:slug" element={<LocalLifeDetail />} />
-      </Routes>
+        </main>
+      )}
 
       <CtaSection />
       <Footer />
     </>
+  );
+}
+
+function App() {
+  const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const blueTheme = location.pathname.startsWith('/azul');
+  const landingPage = location.pathname === '/';
+
+  useEffect(() => {
+    document.title = landingPage
+      ? 'Casas & Cases | Serra e Ilha'
+      : blueTheme
+        ? ilhaPageCopy.documentTitle
+        : 'Casas & Cases Serra | Rancho Queimado';
+  }, [blueTheme, landingPage]);
+
+  return (
+    <div className="siteShell" data-theme={blueTheme ? 'blue' : 'default'}>
+      {!landingPage && (
+        <Header
+          open={menuOpen}
+          setOpen={setMenuOpen}
+          blueTheme={blueTheme}
+          content={blueTheme ? ilhaPageCopy.header : undefined}
+        />
+      )}
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/azul" element={<BluePage />} />
+        <Route path="/azul/vida-local/:slug" element={<BluePage detail />} />
+        <Route path="/serra" element={<OriginalSite />} />
+        <Route path="/vida-local/:slug" element={<OriginalSite detail />} />
+      </Routes>
+    </div>
   );
 }
 

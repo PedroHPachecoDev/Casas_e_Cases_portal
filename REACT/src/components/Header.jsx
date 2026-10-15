@@ -1,8 +1,9 @@
 import { Mail, Menu, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Brand } from './Brand';
 
-export function Header({ open, setOpen }) {
-  const links = [
+export function Header({ open, setOpen, blueTheme, content }) {
+  const links = content?.links ?? [
     ['Propriedades', '#propriedades'],
     ['Lotes', '#lotes'],
     ['Autorais', '#autorais'],
@@ -11,7 +12,27 @@ export function Header({ open, setOpen }) {
 
   return (
     <header className="topbar">
-      <Brand />
+      <Brand blueTheme={blueTheme} />
+      <div
+        className={`locationSwitch ${blueTheme ? '' : 'locationSwitchSerra'}`}
+        role="group"
+        aria-label="Selecionar versão do site"
+      >
+        <Link
+          to="/azul"
+          className="locationOption"
+          aria-current={blueTheme ? 'page' : undefined}
+        >
+          Ilha
+        </Link>
+        <Link
+          to="/serra"
+          className="locationOption"
+          aria-current={blueTheme ? undefined : 'page'}
+        >
+          Serra
+        </Link>
+      </div>
       <button
         className="menuToggle"
         onClick={() => setOpen(!open)}
@@ -28,11 +49,11 @@ export function Header({ open, setOpen }) {
         <span className="language">
           PT <span aria-hidden="true">⌄</span>
         </span>
-        <a href="mailto:contato@casasecases.com.br" className="navContact">
-          <Mail size={14} /> Contato
+        <a href={`mailto:${content?.contactEmail ?? 'contato@casasecases.com.br'}`} className="navContact">
+          <Mail size={14} /> {content?.contactLabel ?? 'Contato'}
         </a>
         <a href="#contato" className="pill">
-          Conversar
+          {content?.actionLabel ?? 'Conversar'}
         </a>
       </nav>
     </header>

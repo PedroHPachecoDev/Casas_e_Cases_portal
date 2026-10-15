@@ -1,0 +1,85 @@
+[data-theme='blue'] {
+  --paper: #071d30;
+  --ink: #f3f8fb;
+  --gold: #83b9da;
+  --brown: #c8dce8;
+  --navy: #102f49;
+  --cream: #153a57;
+  --hero-shade: rgba(4, 15, 26, 0.88);
+  --theme-accent: #9bcce5;
+}
+
+[data-theme='blue'] .featureStrip {
+  background: #102c45;
+}
+
+[data-theme='blue'] .cta {
+  background: #102c45;
+}
+
+[data-theme='blue'] .card,
+[data-theme='blue'] .lotHero,
+[data-theme='blue'] .localLifeFeature,
+[data-theme='blue'] .localLifeDetailPhoto,
+[data-theme='blue'] .localLifeDetailInfo,
+[data-theme='blue'] .carouselArrow,
+[data-theme='blue'] .backLink,
+[data-theme='blue'] .buttonLink {
+  background-color: #f7fbfd;
+}
+
+[data-theme='blue'] .mini {
+  background: #f7fbfd;
+}
+
+[data-theme='blue'] .sectionHead p,
+[data-theme='blue'] .featureGrid p,
+[data-theme='blue'] .cta p {
+  color: rgba(243, 248, 251, 0.78);
+}
+
+[data-theme='blue'] .cardBody,
+[data-theme='blue'] .lotText,
+[data-theme='blue'] .mini,
+[data-theme='blue'] .localLifeFeature,
+[data-theme='blue'] .localLifeFeatureBody,
+[data-theme='blue'] .localLifeDetailInfo {
+  color: #18364e;
+}
+
+[data-theme='blue'] .cardBody p,
+[data-theme='blue'] .meta,
+[data-theme='blue'] .lotText p,
+[data-theme='blue'] .mini p,
+[data-theme='blue'] .localLifeFeatureBody p,
+[data-theme='blue'] .localLifeDetailPhoto figcaption,
+[data-theme='blue'] .localLifeDetailInfo p,
+[data-theme='blue'] .localLifeHighlights,
+[data-theme='blue'] .meta strong,
+[data-theme='blue'] .mini .textLink {
+  color: rgba(24, 54, 78, 0.74);
+}
+
+[data-theme='blue'] .eyebrow,
+[data-theme='blue'] .kicker,
+[data-theme='blue'] .footTitle {
+  color: var(--theme-accent);
+}
+
+[data-theme='blue'] .locationSwitch {
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(22, 59, 89, 0.58);
+}
+
+[data-theme='blue'] .locationSwitch::before {
+  border-color: #b9d9ea;
+}
+
+[data-theme='blue'] .slogan {
+  color: #b9d9ea;
+}
+
+[data-theme='blue'] .pill:hover,
+[data-theme='blue'] .button:hover {
+  color: #071d30;
+}
