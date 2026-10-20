@@ -5,13 +5,10 @@ import br.com.casasecases.api.dto.VistaResponseDTO;
 import br.com.casasecases.api.mapper.PropertyMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.JsonNode;
-import tools.jackson.databind.ObjectMapper;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 
 @Service
@@ -35,7 +32,7 @@ public class VistaService {
         try{
             JsonNode jsonNode = client.getProperty(key, showTotal, search);
             property = propertyMapper.convertData(jsonNode);
-
+            getPropertyPhoto(property);
             return property;
         }catch (Exception e){
             throw new IllegalStateException(
@@ -44,5 +41,26 @@ public class VistaService {
         }
     }
 
+    public List<VistaResponseDTO> getPropertyPhoto(List<VistaResponseDTO> prop) {
+        String search = "{\"fields\":[\"Codigo\",{\"Foto\":[\"Foto\",\"FotoPequena\",\"Destaque\"]}]}";
+
+        for(VistaResponseDTO dto : prop){
+            Integer code = dto.code();
+
+            JsonNode jsonNode = client.getPhotos(key, code, search);
+
+        }
+
+        try{
+
+            property = propertyMapper.convertData(jsonNode);
+
+            return property;
+        }catch (Exception e){
+            throw new IllegalStateException(
+                    "Não foi possível montar a pesquisa de imóveis", e
+            );
+        }
+    }
 
 }
