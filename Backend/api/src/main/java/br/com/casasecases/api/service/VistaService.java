@@ -20,7 +20,7 @@ public class VistaService {
     private VistaClient client;
     private final int showTotal = 1;
     private final ObjectMapper objectMapper;
-    private List<VistaResponseDTO> listProperty = new ArrayList<>();
+    private List<VistaResponseDTO> property = new ArrayList<>();
 
     public VistaService(VistaClient client, ObjectMapper objectMapper) {
         this.client = client;
@@ -33,10 +33,9 @@ public class VistaService {
 
         try{
             JsonNode jsonNode = client.getProperty(key, showTotal, search);
-            listProperty = convertData(jsonNode);
+            property = convertData(jsonNode);
 
-
-            return listProperty;
+            return property;
         }catch (Exception e){
             throw new IllegalStateException(
                     "Não foi possível montar a pesquisa de imóveis", e
@@ -47,6 +46,8 @@ public class VistaService {
 
 
     public List<VistaResponseDTO> convertData(JsonNode jsonNode){
+        List<VistaResponseDTO> listProperty = new ArrayList<>();
+
         if(jsonNode != null){
             Map<String, Object> map = objectMapper.convertValue(
                     jsonNode,
