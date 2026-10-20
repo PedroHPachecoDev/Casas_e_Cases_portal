@@ -4,4 +4,3 @@ spring:
 integrations:
   vistahost:
     url: https://casascas-rest.vistahost.com.br
-    key: ${VISTAHOST_API_KEY}
