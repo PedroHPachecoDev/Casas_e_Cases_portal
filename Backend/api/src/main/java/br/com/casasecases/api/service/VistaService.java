@@ -2,6 +2,7 @@ package br.com.casasecases.api.service;
 
 import br.com.casasecases.api.client.VistaClient;
 import br.com.casasecases.api.dto.VistaResponseDTO;
+import br.com.casasecases.api.mapper.PropertyMapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import tools.jackson.core.type.TypeReference;
@@ -19,12 +20,12 @@ public class VistaService {
     private String key;
     private VistaClient client;
     private final int showTotal = 1;
-    private final ObjectMapper objectMapper;
     private List<VistaResponseDTO> property = new ArrayList<>();
+    private final PropertyMapper propertyMapper;
 
-    public VistaService(VistaClient client, ObjectMapper objectMapper) {
+    public VistaService(VistaClient client, PropertyMapper propertyMapper) {
         this.client = client;
-        this.objectMapper = objectMapper;
+        this.propertyMapper = propertyMapper;
     }
 
     public List<VistaResponseDTO> getProperty(){
@@ -33,7 +34,7 @@ public class VistaService {
 
         try{
             JsonNode jsonNode = client.getProperty(key, showTotal, search);
-            property = convertData(jsonNode);
+            property = propertyMapper.convertData(jsonNode);
 
             return property;
         }catch (Exception e){
@@ -44,28 +45,4 @@ public class VistaService {
     }
 
 
-
-    public List<VistaResponseDTO> convertData(JsonNode jsonNode){
-        List<VistaResponseDTO> listProperty = new ArrayList<>();
-
-        if(jsonNode != null){
-            Map<String, Object> map = objectMapper.convertValue(
-                    jsonNode,
-                    new TypeReference<Map<String, Object>>() {}
-            );
-
-            for (Map.Entry<String, Object> entry : map.entrySet()) {
-                String keyName = entry.getKey();
-
-                // Ignora os metadados de paginação
-                if (!List.of("total", "paginas", "pagina", "quantidade").contains(keyName)) {
-                    // Converte cada valor do mapa (que é o objeto do imóvel) para o seu DTO
-                    VistaResponseDTO dto = objectMapper.convertValue(entry.getValue(), VistaResponseDTO.class);
-                    listProperty.add(dto);
-
-                }
-            }
-        }
-        return listProperty;
-    }
 }
