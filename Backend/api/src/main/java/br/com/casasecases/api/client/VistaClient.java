@@ -1,5 +1,7 @@
 package br.com.casasecases.api.client;
 
+import br.com.casasecases.api.dto.PropertyPhotoDTO;
+import br.com.casasecases.api.dto.VistaResponseDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
