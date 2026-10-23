@@ -32,7 +32,7 @@ public class VistaService {
         try{
             JsonNode jsonNode = client.getProperty(key, showTotal, search);
             property = propertyMapper.convertData(jsonNode);
-            getPropertyPhoto(property);
+            //getPropertyPhoto(property);
             return property;
         }catch (Exception e){
             throw new IllegalStateException(
@@ -41,26 +41,26 @@ public class VistaService {
         }
     }
 
-    public List<VistaResponseDTO> getPropertyPhoto(List<VistaResponseDTO> prop) {
-        String search = "{\"fields\":[\"Codigo\",{\"Foto\":[\"Foto\",\"FotoPequena\",\"Destaque\"]}]}";
-
-        for(VistaResponseDTO dto : prop){
-            Integer code = dto.code();
-
-            JsonNode jsonNode = client.getPhotos(key, code, search);
-
-        }
-
-        try{
-
-            property = propertyMapper.convertData(jsonNode);
-
-            return property;
-        }catch (Exception e){
-            throw new IllegalStateException(
-                    "Não foi possível montar a pesquisa de imóveis", e
-            );
-        }
-    }
+//    public List<VistaResponseDTO> getPropertyPhoto(List<VistaResponseDTO> prop) {
+//        String search = "{\"fields\":[\"Codigo\",{\"Foto\":[\"Foto\",\"FotoPequena\",\"Destaque\"]}]}";
+//
+//        for(VistaResponseDTO dto : prop){
+//            Integer code = dto.code();
+//
+//            JsonNode jsonNode = client.getPhotos(key, code, search);
+//
+//        }
+//
+//        try{
+//
+//            property = propertyMapper.convertData(jsonNode);
+//
+//            return property;
+//        }catch (Exception e){
+//            throw new IllegalStateException(
+//                    "Não foi possível montar a pesquisa de imóveis", e
+//            );
+//        }
+//    }
 
 }
