@@ -25,4 +25,5 @@ public interface VistaClient {
             @RequestParam("imovel") Integer code,
             @RequestParam("pesquisa") String search
     );
+    // Teste
 }
