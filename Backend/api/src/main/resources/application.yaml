@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: api
+integrations:
+  vistahost:
+    url: https://casascas-rest.vistahost.com.br
