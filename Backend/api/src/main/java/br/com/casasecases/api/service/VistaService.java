@@ -1,6 +1,8 @@
 package br.com.casasecases.api.service;
 
 import br.com.casasecases.api.client.VistaClient;
+import br.com.casasecases.api.dto.PhotoDTO;
+import br.com.casasecases.api.dto.PropertyPhotoDTO;
 import br.com.casasecases.api.dto.VistaResponseDTO;
 import br.com.casasecases.api.mapper.PropertyMapper;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,6 +11,7 @@ import tools.jackson.databind.JsonNode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -31,8 +34,7 @@ public class VistaService {
 
         try{
             JsonNode jsonNode = client.getProperty(key, showTotal, search);
-            property = propertyMapper.convertData(jsonNode);
-            //getPropertyPhoto(property);
+            property = propertyMapper.convertDataProperty(jsonNode);
             return property;
         }catch (Exception e){
             throw new IllegalStateException(
@@ -41,26 +43,35 @@ public class VistaService {
         }
     }
 
-//    public List<VistaResponseDTO> getPropertyPhoto(List<VistaResponseDTO> prop) {
-//        String search = "{\"fields\":[\"Codigo\",{\"Foto\":[\"Foto\",\"FotoPequena\",\"Destaque\"]}]}";
-//
-//        for(VistaResponseDTO dto : prop){
-//            Integer code = dto.code();
-//
-//            JsonNode jsonNode = client.getPhotos(key, code, search);
-//
-//        }
-//
-//        try{
-//
-//            property = propertyMapper.convertData(jsonNode);
-//
-//            return property;
-//        }catch (Exception e){
-//            throw new IllegalStateException(
-//                    "Não foi possível montar a pesquisa de imóveis", e
-//            );
-//        }
-//    }
+    public List<PropertyPhotoDTO> listPropertyPhoto(){
+        List<VistaResponseDTO> properties = getProperty();
+
+        return properties.stream()
+                .map(p -> {
+                    Integer codeProperty = p.code();
+                    List<PhotoDTO> photos = searchPhotos(codeProperty);
+
+                    return new PropertyPhotoDTO(p, photos);
+                }).collect(Collectors.toList());
+    }
+
+
+    public List<PhotoDTO> searchPhotos(Integer code) {
+        try{
+
+            String search = "{\"fields\":[\"Codigo\",{\"Foto\":[\"Foto\",\"FotoPequena\",\"Destaque\"]}]}";
+
+            JsonNode jsonNode = client.getPhotos(key, code, search);
+            List<PhotoDTO> listPhoto = new ArrayList<>();
+
+            List<PhotoDTO> propertyPhoto = propertyMapper.convertDataPhoto(jsonNode);
+
+            return propertyPhoto;
+        }catch (Exception e){
+            throw new IllegalStateException(
+                    "Não foi possível montar a pesquisa de imóveis", e
+            );
+        }
+    }
 
 }

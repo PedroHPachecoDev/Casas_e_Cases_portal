@@ -1,7 +1,10 @@
 package br.com.casasecases.api.dto;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonAlias;
 
 public record PhotoDTO (
-        List<String> photos
+        @JsonAlias("Codigo") String code,
+        @JsonAlias("Foto") String urlPhoto,
+        @JsonAlias("FotoPequena") String urlPhotoSmall,
+        @JsonAlias("Destaque") String featuredPhoto
 ) {}

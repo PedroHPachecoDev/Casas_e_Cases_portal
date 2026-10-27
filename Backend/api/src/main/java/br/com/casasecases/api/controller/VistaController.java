@@ -20,7 +20,7 @@ public class VistaController {
     }
 
     @GetMapping
-    public List<VistaResponseDTO> get(){
-        return vistaService.getProperty();
+    public List<PropertyPhotoDTO> get(){
+        return vistaService.listPropertyPhoto();
     }
 }
