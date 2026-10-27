@@ -39,7 +39,7 @@ function BlueLocalLifeSection() {
           &#10094;
         </button>
 
-        <Link className="localLifeFeature" to={`/azul/vida-local/${currentItem.slug}`}>
+        <Link className="localLifeFeature" to={`/ilha/vida-local/${currentItem.slug}`}>
           <img src={currentItem.image} alt={currentItem.title} loading="lazy" />
           <div className="localLifeFeatureBody">
             <div className="tag">{currentItem.tag}</div>
@@ -93,7 +93,7 @@ export function BluePage({ detail = false }) {
       {detail ? (
         <LocalLifeDetail
           items={ilhaLocalLife}
-          homePath="/azul"
+          homePath="/ilha"
           content={ilhaPageCopy.detail}
         />
       ) : (

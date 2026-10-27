@@ -19,7 +19,7 @@ export function Header({ open, setOpen, blueTheme, content }) {
         aria-label="Selecionar versão do site"
       >
         <Link
-          to="/azul"
+          to="/ilha"
           className="locationOption"
           aria-current={blueTheme ? 'page' : undefined}
         >

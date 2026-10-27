@@ -52,7 +52,7 @@ export function LandingPage() {
         <RegionPanel
           region="Ilha"
           location="Florianópolis e região"
-          to="/azul"
+          to="/ilha"
           image="/img/MIRANTE/IMG_8019.JPG"
           side="ilha"
         />

@@ -55,7 +55,7 @@ function OriginalSite({ detail = false }) {
 function App() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
-  const blueTheme = location.pathname.startsWith('/azul');
+  const blueTheme = location.pathname.startsWith('/ilha');
   const landingPage = location.pathname === '/';
 
   useEffect(() => {
@@ -78,8 +78,8 @@ function App() {
       )}
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/azul" element={<BluePage />} />
-        <Route path="/azul/vida-local/:slug" element={<BluePage detail />} />
+        <Route path="/ilha" element={<BluePage />} />
+        <Route path="/ilha/vida-local/:slug" element={<BluePage detail />} />
         <Route path="/serra" element={<OriginalSite />} />
         <Route path="/vida-local/:slug" element={<OriginalSite detail />} />
       </Routes>
