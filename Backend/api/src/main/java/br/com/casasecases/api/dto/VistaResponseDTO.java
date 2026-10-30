@@ -1,10 +1,14 @@
 package br.com.casasecases.api.dto;
 
-import java.util.List;
-import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonAlias;
 
 public record VistaResponseDTO(
-        List<String> fields,
-        Map<String, String> order
+        @JsonAlias("Codigo") Integer code,
+        @JsonAlias("Categoria") String category,
+        @JsonAlias("Bairro") String neighborhood,
+        @JsonAlias("Cidade") String city,
+        @JsonAlias("Dormitorios") Integer dormitory,
+        @JsonAlias("Suites") Integer suite,
+        @JsonAlias("Vagas") Integer vacancies
 ) {
 }
