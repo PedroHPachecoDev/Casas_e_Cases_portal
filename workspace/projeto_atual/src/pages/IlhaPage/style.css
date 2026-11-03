@@ -1,0 +1,30 @@
+/* Variáveis de tema e estilos da página Ilha */
+
+[data-theme='blue'] {
+  --paper: #071d30;
+  --ink: #f3f8fb;
+  --gold: #83b9da;
+  --brown: #c8dce8;
+  --navy: #102f49;
+  --cream: #153a57;
+  --hero-shade: rgba(4, 15, 26, 0.88);
+  --theme-accent: #9bcce5;
+}
+
+[data-theme='blue'] .locationSwitch {
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(22, 59, 89, 0.58);
+}
+
+[data-theme='blue'] .locationSwitch::before {
+  border-color: #b9d9ea;
+}
+
+[data-theme='blue'] .slogan {
+  color: #b9d9ea;
+}
+
+[data-theme='blue'] .pill:hover,
+[data-theme='blue'] .button:hover {
+  color: #071d30;
+}

@@ -1,0 +1,119 @@
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(180, 60, 100, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Links container */
+.navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0.8rem 1.5rem;
+}
+
+.navbar-links li a {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.navbar-links li a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Hamburger - hidden on desktop */
+.navbar-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.8rem 1.2rem;
+    margin-left: auto;
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger open state */
+.navbar-hamburger.open .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-hamburger.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-hamburger.open .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .navbar-hamburger {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem 1rem 1rem;
+        gap: 0;
+    }
+
+    .navbar-links--open {
+        display: flex;
+        animation: slideDown 0.3s ease;
+    }
+
+    .navbar-links li a {
+        display: block;
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+
+    .navbar-links li a:hover {
+        background: rgba(255, 255, 255, 0.12);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

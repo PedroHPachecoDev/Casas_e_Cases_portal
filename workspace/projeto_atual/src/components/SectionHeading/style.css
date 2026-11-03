@@ -1,0 +1,29 @@
+.sectionHead {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 36px;
+  align-items: end;
+  margin-bottom: 30px;
+}
+
+.sectionHead h2 {
+  margin: 10px 0 0;
+  font-family: var(--serif);
+  font-size: clamp(36px, 3vw, 50px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.sectionHead p {
+  margin: 0;
+  line-height: 1.75;
+  color: rgba(23, 21, 18, 0.72);
+  font-size: 17px;
+}
+
+@media (max-width: 900px) {
+  .sectionHead {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

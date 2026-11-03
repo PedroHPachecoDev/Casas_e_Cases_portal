@@ -1,0 +1,89 @@
+.localLifeSection {
+  padding-top: 0;
+  margin-bottom: 110px;
+}
+
+.localLifeCarousel {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.localLifeFeature {
+  display: block;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 18px 38px rgba(14, 18, 20, 0.1);
+  color: inherit;
+}
+
+.localLifeFeature img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  display: block;
+}
+
+.localLifeFeatureBody {
+  padding: 26px 28px;
+}
+
+.localLifeFeatureBody h3 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3vw, 42px);
+  margin: 10px 0 12px;
+  line-height: 1.08;
+}
+
+.localLifeFeatureBody p {
+  margin: 0;
+  line-height: 1.7;
+  color: rgba(23, 21, 18, 0.7);
+  font-size: 15px;
+}
+
+.carouselArrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(17, 23, 28, 0.1);
+  background: #fff;
+  color: var(--navy);
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.carouselArrow:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+/* Tema Ilha */
+[data-theme='blue'] .localLifeFeature {
+  background-color: #f7fbfd;
+}
+
+[data-theme='blue'] .localLifeFeatureBody {
+  color: #18364e;
+}
+
+[data-theme='blue'] .localLifeFeatureBody p {
+  color: rgba(24, 54, 78, 0.74);
+}
+
+[data-theme='blue'] .carouselArrow {
+  background-color: #f7fbfd;
+}
+
+@media (max-width: 900px) {
+  .localLifeCarousel {
+    grid-template-columns: 1fr;
+  }
+
+  .carouselArrow {
+    display: none;
+  }
+}

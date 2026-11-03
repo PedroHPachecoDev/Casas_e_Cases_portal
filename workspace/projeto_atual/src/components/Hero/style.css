@@ -1,0 +1,139 @@
+.hero {
+  position: relative;
+  height: 78vh;
+  min-height: 630px;
+  max-height: 800px;
+  overflow: hidden;
+  background: var(--navy);
+  color: #fff;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.slides,
+.slide {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1.1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.heroCopy {
+  position: absolute;
+  z-index: 5;
+  left: 6vw;
+  bottom: 95px;
+  max-width: 700px;
+}
+
+.eyebrow,
+.kicker,
+.tag {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.eyebrow,
+.kicker {
+  color: #d8b470;
+}
+
+.siteShell:not([data-theme='blue']) .hero .eyebrow {
+  color: #f4f9fc;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.75);
+}
+
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(43px, 5vw, 72px);
+  font-weight: 400;
+  line-height: 1.02;
+  margin: 12px 0 16px;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 620px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.heroLink,
+.scrollhint,
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.heroLink {
+  margin-top: 22px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.heroControls {
+  position: absolute;
+  z-index: 6;
+  right: 6vw;
+  bottom: 52px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+}
+
+.heroControls button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.scrollhint {
+  position: absolute;
+  z-index: 6;
+  left: 6vw;
+  bottom: 38px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 650px;
+  }
+
+  .heroCopy {
+    bottom: 105px;
+    max-width: 86vw;
+  }
+
+  .heroControls {
+    left: 6vw;
+    right: auto;
+    bottom: 45px;
+  }
+
+  .scrollhint {
+    bottom: 48px;
+  }
+}

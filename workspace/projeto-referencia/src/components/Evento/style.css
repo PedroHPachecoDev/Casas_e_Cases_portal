@@ -1,0 +1,45 @@
+#maps-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 75vh;
+    padding: 3rem 1.5rem;
+    background: linear-gradient(180deg, #f9f0f3 0%, #fdf6f8 100%);
+}
+
+#maps-container p {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 1.1rem;
+    color: #6b4455;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#maps-container iframe {
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(200, 70, 120, 0.2);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #maps-container {
+        padding: 2rem 1rem;
+    }
+    
+    #maps-container p {
+        font-size: 1rem;
+    }
+    
+    #maps-container iframe {
+        width: 100% !important;
+        height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    #maps-container iframe {
+        height: 300px;
+    }
+}
