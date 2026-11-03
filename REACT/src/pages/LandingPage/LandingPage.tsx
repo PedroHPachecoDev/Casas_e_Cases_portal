@@ -1,6 +1,5 @@
 import {
   ArrowRight,
-  FileText,
   Handshake,
   House,
   PanelsTopLeft,
@@ -17,12 +16,11 @@ type ServiceItem = {
 };
 
 const services: ServiceItem[] = [
-  { icon: TrendingUp, label: <>Investimentos<br />imobiliários</> },
-  { icon: PanelsTopLeft, label: <>Projetos<br />personalizados</> },
+  { icon: TrendingUp, label: <>Parcerias em<br />investimentos imobiliários</> },
+  { icon: PanelsTopLeft, label: <>Projetos, execuções<br />e projeções de resultados</> },
   { icon: Handshake, label: <>Compra e venda<br />de imóveis</> },
-  { icon: UsersRound, label: <>Assessoria<br />completa</> },
-  { icon: House, label: <>Imóveis<br />selecionados</> },
-  { icon: FileText, label: <>Suporte em<br />todas as etapas</> },
+  { icon: UsersRound, label: <>Intermediação<br />imobiliária</> },
+  { icon: House, label: <>Compra e venda<br />de imóveis próprios</> },
 ];
 
 type RegionPanelProps = {
@@ -83,9 +81,6 @@ export function LandingPage() {
           </span>
         </div>
         <nav className="landingNav" aria-label="Institucional">
-          <span>Sobre</span>
-          <span>Serviços</span>
-          <span>Conteúdo</span>
           <span>Contato</span>
         </nav>
       </header>
@@ -93,8 +88,8 @@ export function LandingPage() {
       <div className="landingServices" aria-label="Serviços Casas & Cases">
         {services.map(({ icon: Icon, label }, index) => (
           <div className="landingService" key={index}>
-            <Icon size={34} strokeWidth={1.35} aria-hidden="true" />
-            <span>{label}</span>
+            <Icon className="landingServiceIcon" size={32} strokeWidth={1.35} aria-hidden="true" />
+            <span className="landingServiceLabel">{label}</span>
           </div>
         ))}
       </div>

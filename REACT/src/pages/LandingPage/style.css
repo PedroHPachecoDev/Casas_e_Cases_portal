@@ -59,8 +59,7 @@
 .landingRegionEyebrow,
 .landingRegionLocation,
 .landingExplore,
-.landingNav,
-.landingService {
+.landingNav {
   font-family: var(--sans, Arial, sans-serif);
   letter-spacing: 0.22em;
 }
@@ -174,34 +173,95 @@
 
 .landingServices {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: grid;
   min-height: 108px;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   margin-top: auto;
+  border-top: 1px solid rgba(215, 172, 112, 0.28);
   background: #17120e;
 }
 
 .landingService {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 8px;
-  margin: 22px 0;
-  border-right: 1px solid rgba(215, 172, 112, 0.45);
+  gap: 9px;
+  padding: 16px 12px;
+  border-right: 1px solid rgba(215, 172, 112, 0.35);
   color: #c39a65;
-  font-size: 9px;
-  line-height: 1.55;
+  font-family: var(--sans, Arial, sans-serif);
+  font-size: clamp(8px, 0.65vw, 10px);
+  letter-spacing: 0.15em;
+  line-height: 1.5;
   text-align: center;
   text-transform: uppercase;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 220ms ease, color 220ms ease;
 }
 
 .landingService:last-child {
   border-right: 0;
 }
 
+.landingServiceIcon,
+.landingService svg {
+  width: clamp(24px, 2vw, 32px);
+  height: clamp(24px, 2vw, 32px);
+  flex-shrink: 0;
+  transition: transform 220ms ease, color 220ms ease;
+}
+
+.landingServiceLabel,
+.landingService span {
+  display: block;
+  max-width: 100%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .landingService:hover {
+    background-color: rgba(215, 172, 112, 0.07);
+    color: #e5bd85;
+  }
+
+  .landingService:hover .landingServiceIcon,
+  .landingService:hover svg {
+    transform: translateY(-2px);
+    color: #f0cb95;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1024px) {
+  .landingServices {
+    min-height: 96px;
+  }
+
+  .landingService {
+    gap: 7px;
+    padding: 12px 6px;
+    font-size: 8px;
+    letter-spacing: 0.11em;
+  }
+
+  .landingServiceIcon,
+  .landingService svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 @media (max-width: 700px) {
+  .landingPage {
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100vh;
+    min-height: 100svh;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .landingHeader {
     position: relative;
     order: 0;
@@ -226,10 +286,6 @@
 
   .landingRegionCopy {
     bottom: 10%;
-  }
-
-  .landingHeader {
-    min-height: 145px;
   }
 
   .landingBrandIcon {
@@ -273,18 +329,37 @@
 
   .landingServices {
     order: 2;
-    min-height: 172px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    min-height: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-bottom: max(16px, env(safe-area-inset-bottom, 16px));
+    border-top: 1px solid rgba(215, 172, 112, 0.28);
   }
 
   .landingService {
-    gap: 5px;
-    margin: 10px 0;
-    font-size: 8px;
+    gap: 7px;
+    padding: 18px 12px;
+    border-right: 1px solid rgba(215, 172, 112, 0.25);
+    border-bottom: 1px solid rgba(215, 172, 112, 0.25);
+    font-size: clamp(8px, 2.3vw, 9.5px);
+    letter-spacing: 0.11em;
+    line-height: 1.45;
   }
 
-  .landingService:nth-child(3) {
+  .landingService:nth-child(2n) {
     border-right: 0;
+  }
+
+  .landingService:last-child {
+    grid-column: 1 / -1;
+    border-right: 0;
+    border-bottom: 0;
+    padding: 16px 12px;
+  }
+
+  .landingServiceIcon,
+  .landingService svg {
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -297,12 +372,46 @@
   .landingExplore {
     min-width: 200px;
   }
+
+  .landingService {
+    padding: 14px 6px;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+  }
+
+  .landingServiceIcon,
+  .landingService svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .landingService:last-child {
+    padding: 14px 6px;
+  }
+}
+
+@media (max-width: 320px) {
+  .landingService {
+    padding: 10px 4px;
+    font-size: 7.2px;
+    letter-spacing: 0.05em;
+  }
+
+  .landingServiceIcon,
+  .landingService svg {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media (min-width: 701px) and (max-height: 680px) {
   .landingHeader {
     min-height: 150px;
     padding-top: 14px;
+  }
+
+  .landingSplit {
+    inset: 0 0 88px;
   }
 
   .landingBrandIcon {
@@ -337,10 +446,68 @@
     min-height: 38px;
     margin-top: 11px;
   }
+
+  .landingServices {
+    min-height: 88px;
+  }
+
+  .landingService {
+    gap: 6px;
+    padding: 10px 6px;
+    font-size: 8px;
+  }
+
+  .landingServiceIcon,
+  .landingService svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .landingSplit {
+    min-height: 280px;
+  }
+
+  .landingServices {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    min-height: 62px;
+    padding-bottom: max(6px, env(safe-area-inset-bottom, 6px));
+  }
+
+  .landingService {
+    grid-column: auto;
+    border-bottom: 0;
+    border-right: 1px solid rgba(215, 172, 112, 0.28);
+    padding: 6px 4px;
+    gap: 4px;
+    font-size: 7px;
+    letter-spacing: 0.07em;
+  }
+
+  .landingService:nth-child(2n) {
+    border-right: 1px solid rgba(215, 172, 112, 0.28);
+  }
+
+  .landingService:last-child {
+    grid-column: auto;
+    border-right: 0;
+    border-bottom: 0;
+    padding: 6px 4px;
+  }
+
+  .landingServiceIcon,
+  .landingService svg {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .landingExplore {
+  .landingExplore,
+  .landingService,
+  .landingServiceIcon,
+  .landingService svg {
     transition: none;
   }
 }
