@@ -43,7 +43,7 @@ export const images = {
 
   // Cabanas Serra
   cabanaNashville: '/img/cabanaNashville.jpg',
-  cabanaTennessee: '/img/cabanaTennessee1.jpg',
+  cabanaTennessee: '/img/cabanaTennessee.jpg',
   cabanaMemphis: '/img/cabanaMemphis.jpg',
 
   // Propriedades (pendentes de imagem)
@@ -52,6 +52,6 @@ export const images = {
   casaIpes1: '',
 
   // Ilha — paisagem específica
-  ilhaPaisagem1: '/img/PAISAGEM/Captura de Tela (84).png',
-  landingPaisagem: '/img/PAISAGEM/Captura de Tela (83).png',
+  ilhaPaisagem1: '/img/MIRANTE/IMG_8019.jpg',
+  landingPaisagem: '/img/PAISAGEM/paisagemP1.png',
 } as const;
