@@ -58,14 +58,14 @@ export function LandingPage() {
           region="Serra"
           location="Rancho Queimado"
           to="/serra"
-          image="/img/PAISAGEM/Captura de Tela (83).png"
+          image="/img/PAISAGEM/paisagemP1.png"
           side="serra"
         />
         <RegionPanel
           region="Ilha"
           location="Florianópolis e região"
           to="/ilha"
-          image="/img/MIRANTE/IMG_8019.JPG"
+          image="/img/MIRANTE/IMG_8019.jpg"
           side="ilha"
         />
       </div>
