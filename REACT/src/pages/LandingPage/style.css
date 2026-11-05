@@ -9,6 +9,7 @@
   padding: 0;
   background: #17120e;
   color: #fff;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .landingSplit {
@@ -60,7 +61,7 @@
 .landingRegionLocation,
 .landingExplore,
 .landingNav {
-  font-family: var(--sans, Arial, sans-serif);
+  font-family: var(--sans, 'Montserrat', sans-serif);
   letter-spacing: 0.22em;
 }
 
@@ -70,7 +71,7 @@
 
 .landingRegion h2 {
   margin: 10px 0 8px;
-  font-family: var(--serif, Georgia, serif);
+  font-family: var(--serif, 'Montserrat', sans-serif);
   font-size: clamp(52px, 7vw, 88px);
   font-weight: 400;
   letter-spacing: 0.28em;
@@ -146,7 +147,7 @@
 }
 
 .landingBrandName {
-  font-family: var(--sans, Arial, sans-serif);
+  font-family: var(--sans, 'Montserrat', sans-serif);
   font-size: 27px;
   font-weight: 400;
   letter-spacing: 0.12em;
@@ -155,7 +156,7 @@
 
 .landingBrandSlogan {
   margin-top: 10px;
-  font-family: var(--sans, Arial, sans-serif);
+  font-family: var(--sans, 'Montserrat', sans-serif);
   font-size: 12px;
   letter-spacing: 0.15em;
   line-height: 1.8;
@@ -192,7 +193,7 @@
   padding: 16px 12px;
   border-right: 1px solid rgba(215, 172, 112, 0.35);
   color: #c39a65;
-  font-family: var(--sans, Arial, sans-serif);
+  font-family: var(--sans, 'Montserrat', sans-serif);
   font-size: clamp(8px, 0.65vw, 10px);
   letter-spacing: 0.15em;
   line-height: 1.5;

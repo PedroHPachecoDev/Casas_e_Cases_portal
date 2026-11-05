@@ -2,6 +2,10 @@
 // Importado por serraContent.ts e ilhaContent.ts
 
 export const images = {
+  // Logos
+  logoIlha: '/img/LOGO/c&c_ilha.png',
+  logoSerra: '/img/LOGO/c&c_serra.png',
+
   // Thumbnails
   centroHistorico1: '/img/CENTRO_HISTORICO/IMG_8072.jpg',
   mirante1: '/img/MIRANTE/IMG_8019.jpg',
