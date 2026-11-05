@@ -39,7 +39,7 @@ export const images = {
 
   // Cabanas Serra
   cabanaNashville: '/img/cabanaNashville.jpg',
-  cabanaTennessee: '/img/cabanaTennessee.jpg',
+  cabanaTennessee: '/img/cabanaTennessee1.jpg',
   cabanaMemphis: '/img/cabanaMemphis.jpg',
 
   // Propriedades (pendentes de imagem)
