@@ -1,0 +1,98 @@
+footer {
+  background: var(--navy);
+  color: #f3efe8;
+  padding: 42px 6vw 30px;
+}
+
+.footgrid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr;
+  gap: 40px;
+}
+
+.footgrid .brand {
+  margin-bottom: 18px;
+}
+
+.footgrid p {
+  margin: 0 0 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+}
+
+.socials a {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.socials a svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+
+.footTitle {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #d8b470;
+  margin-bottom: 12px;
+}
+
+.footgrid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footgrid li {
+  margin-bottom: 8px;
+}
+
+.footgrid a {
+  display: block;
+  color: #d9d5d1;
+}
+
+.copyright {
+  max-width: 1280px;
+  margin: 26px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .footgrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .copyright {
+    text-align: left;
+  }
+}
+
+/* Tema Ilha */
+[data-theme='blue'] .footTitle {
+  color: var(--theme-accent);
+}
