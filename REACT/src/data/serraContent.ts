@@ -111,7 +111,7 @@ export const heroSlides: HeroSlide[] = [
 // ---------------------------------------------------------------------------
 // Propriedades
 // ---------------------------------------------------------------------------
-
+//
 export const authorialProperties: Property[] = [
   {
     image: images.cabanaNashville,
