@@ -72,16 +72,18 @@ export function LandingPage() {
 
       <header className="landingHeader">
         <div className="landingBrand" aria-label="Casas & Cases">
-          <House className="landingBrandIcon" strokeWidth={1.35} aria-hidden="true" />
-          <span className="landingBrandName">Casas &amp; Cases</span>
-          <span className="landingBrandSlogan">
-            Mais do que intermediação imobiliária,
-            <br />
-            ajudamos pessoas a tomar boas decisões.
-          </span>
+          <img src="/img/LOGO/c&c.png" alt="Casas & Cases" />
+
+
         </div>
         <nav className="landingNav" aria-label="Institucional">
-          <span>Contato</span>
+          <a
+            href="https://wa.me/5548999358523"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contato
+          </a>
         </nav>
       </header>
 
