@@ -64,6 +64,19 @@
   border: 0;
   color: #fff;
   cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  line-height: 1;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.menuToggle:hover {
+  color: var(--gold);
+}
+
+.menuToggle:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
 
 .locationSwitch {
@@ -135,28 +148,48 @@
   }
 
   .menuToggle {
-    display: block;
-    z-index: 22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 105;
   }
 
   .nav {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
+    bottom: 0;
     width: min(300px, 84vw);
     height: 100vh;
-    padding: 90px 28px 28px;
+    height: 100dvh;
+    padding: max(85px, calc(env(safe-area-inset-top, 0px) + 65px)) 28px max(28px, env(safe-area-inset-bottom, 28px));
     background: var(--navy);
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     gap: 23px;
+    z-index: 100;
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease,
+                visibility 0s linear 0.3s;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav.navOpen {
     transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease,
+                visibility 0s linear 0s;
   }
 
   .nav .language {
@@ -185,11 +218,6 @@
     grid-column: 2;
     grid-row: 1;
   }
-
-  .nav {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-  }
 }
 
 @media (max-width: 360px) {
@@ -205,7 +233,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .locationSwitch::before,
-  .locationOption {
+  .locationOption,
+  .nav,
+  .menuToggle {
     transition: none;
   }
 }
