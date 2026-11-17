@@ -1,6 +1,6 @@
 .featureStrip {
   margin: 0 0 110px;
-  background: #ebe4d8;
+  background: #ccc1af;
   padding: 0 0;
 }
 
@@ -12,6 +12,13 @@
   gap: 52px;
   align-items: center;
   padding: 0 6vw;
+}
+
+.kicker2 {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #000000;
 }
 
 .featureGrid img {
@@ -32,7 +39,7 @@
   margin: 0;
   line-height: 1.8;
   font-size: 18px;
-  color: rgba(23, 21, 18, 0.72);
+  color: #171512b8;
 }
 
 .lightLink {

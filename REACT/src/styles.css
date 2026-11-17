@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --paper: #f2eee6;
+  --paper: #17120e;
   --ink: #171512;
   --gold: #c59a52;
   --brown: #4a3020;
@@ -80,7 +80,7 @@ main {
 
 .eyebrow,
 .kicker {
-  color: #d8b470;
+  color: #ffffff;
 }
 
 [data-theme='blue'] .eyebrow,
@@ -143,6 +143,7 @@ main {
 }
 
 .lightLink {
-  color: var(--gold);
+  font-weight: bold;
+  color: #171512b8;
   margin-top: 22px;
 }

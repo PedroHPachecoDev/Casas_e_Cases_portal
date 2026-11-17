@@ -7,6 +7,20 @@ import { IlhaPage } from './pages/IlhaPage/IlhaPage';
 import { LandingPage } from './pages/LandingPage/LandingPage';
 import { SerraPage } from './pages/SerraPage/SerraPage';
 
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
+
 export function App() {
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,6 +37,7 @@ export function App() {
 
   return (
     <div className="siteShell" data-theme={blueTheme ? 'blue' : 'default'}>
+      <ScrollToTop />
       {!landingPage && (
         <HeaderComponent
           open={menuOpen}
@@ -36,6 +51,7 @@ export function App() {
         <Route path="/ilha" element={<IlhaPage />} />
         <Route path="/ilha/vida-local/:slug" element={<IlhaPage detail />} />
         <Route path="/serra" element={<SerraPage />} />
+        <Route path="/serra/vida-local/:slug" element={<SerraPage detail />} />
         <Route path="/vida-local/:slug" element={<SerraPage detail />} />
       </Routes>
     </div>
