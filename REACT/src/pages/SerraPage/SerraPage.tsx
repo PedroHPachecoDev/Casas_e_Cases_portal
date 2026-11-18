@@ -23,7 +23,7 @@ export function SerraPage({ detail = false }: SerraPageProps) {
   const copy = serraPageCopy;
 
   return (
-    <>
+    <div className="serraPage">
       {detail ? (
         <LocalLifeDetailComponent
           items={localLife}
@@ -64,6 +64,6 @@ export function SerraPage({ detail = false }: SerraPageProps) {
 
       <CtaSectionComponent content={copy.cta} />
       <FooterComponent blueTheme={false} content={copy.footer} />
-    </>
+    </div>
   );
 }

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import type { LocalLifeItem } from '../../data/serraContent';
 import './style.css';
@@ -16,6 +17,13 @@ type LocalLifeDetailProps = {
 
 export function LocalLifeDetailComponent({ items, homePath, content }: LocalLifeDetailProps) {
   const { slug } = useParams();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, [slug]);
+
   const item = items.find((entry) => entry.slug === slug);
 
   if (!item) {
@@ -52,7 +60,7 @@ export function LocalLifeDetailComponent({ items, homePath, content }: LocalLife
                   loop
                   playsInline
                   preload="metadata"
-                  onMouseEnter={(event) => event.currentTarget.play().catch(() => {})}
+                  onMouseEnter={(event) => event.currentTarget.play().catch(() => { })}
                   onMouseLeave={(event) => {
                     event.currentTarget.pause();
                     event.currentTarget.currentTime = 0;
