@@ -12,7 +12,7 @@ export function FeatureSectionComponent({ content }: FeatureSectionProps) {
       <div className="featureGrid">
         <img src={content.image} alt={content.imageAlt} loading="lazy" />
         <div>
-          <div className="kicker">{content.kicker}</div>
+          <div className="kicker2">{content.kicker}</div>
           <h2>{content.title}</h2>
           <p>{content.description}</p>
           <a className="textLink lightLink" href="#contato">

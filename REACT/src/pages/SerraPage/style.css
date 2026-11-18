@@ -1,1 +1,56 @@
 /* Estilos específicos da página Serra */
+
+[data-theme='default'] {
+  --paper: #1f1711;
+}
+
+.serraPage {
+  --ink: #f3f8fb;
+  --serra-card: #ccc1af;
+  color: var(--ink);
+}
+
+.serraPage .card,
+.serraPage .localLifeFeature,
+.serraPage .lotHero,
+.serraPage .mini,
+.serraPage .localLifeDetailPhoto,
+.serraPage .localLifeDetailInfo {
+  background-color: var(--serra-card);
+}
+
+.serraPage .sectionHead p {
+  color: rgba(243, 248, 251, 0.78);
+}
+
+.serraPage .featureGrid > div,
+.serraPage .cardBody,
+.serraPage .localLifeFeatureBody,
+.serraPage .lotText,
+.serraPage .mini,
+.serraPage .localLifeDetailInfo,
+.serraPage .cta {
+  color: #171512;
+}
+
+.serraPage .meta strong {
+  color: #171512;
+}
+
+.serraPage .mini .textLink {
+  color: #171512;
+}
+
+.serraPage .button:hover {
+  color: #171512;
+}
+
+.serraPage .lotsSection .darkButton {
+  border-color: #171512;
+  color: #171512;
+}
+
+.serraPage .lotsSection .darkButton:hover {
+  background: #171512;
+  color: #fff;
+}
